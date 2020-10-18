@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { Bank } from "./model/bank";
+import { Bank } from "../model/bank";
 
 
 @Injectable({
