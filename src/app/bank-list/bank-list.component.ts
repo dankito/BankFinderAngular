@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { banks } from '../banks';
+import { BankFinderService } from "../bankfinder.service";
+
 
 @Component({
   selector: 'app-bank-list',
@@ -8,6 +9,19 @@ import { banks } from '../banks';
   styleUrls: ['./bank-list.component.css']
 })
 export class BankListComponent {
-  banks = banks;
+
+  searchResult: any[]
+
+
+  constructor(
+      private bankFinderService: BankFinderService
+  ) {
+    this.searchResult = this.bankFinderService.banks
+  }
+
+
+  searchTextChanged(enteredText: String) {
+    this.bankFinderService.searchBanks(enteredText, banks => this.searchResult = banks)
+  }
 
 }

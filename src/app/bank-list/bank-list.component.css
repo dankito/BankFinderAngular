@@ -1,0 +1,20 @@
+
+.bank-search-field {
+    width: 300px;
+    margin-left: 12px;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.bank-name {
+    margin-bottom: 10px;
+}
+
+.bank-bank-code {
+    font-weight: bold;
+}
+
+.bank-postal-code {
+    margin-left: 8px;
+    margin-right: 4px;
+}
