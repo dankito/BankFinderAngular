@@ -1,1 +1,23 @@
+<div>
+    <span>Search banks:</span>
+    <input class="bank-search-field" (keyup)="searchTextChanged($event.target.value)">
+</div>
+
 <h2>Supported banks</h2>
+
+<div *ngFor="let bank of searchResult">
+
+    <h3 class="bank-name">
+        {{ bank.name }}
+    </h3>
+
+    <div>
+        <span class="bank-bank-code">{{ bank.bankCode }}</span>
+
+        <span>
+            <span class="bank-postal-code">{{ bank.postalCode }}</span>
+
+            <span class="bank-city">{{ bank.city }}</span>
+        </span>
+    </div>
+</div>
