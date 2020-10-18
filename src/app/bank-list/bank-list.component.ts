@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { BankFinderService } from "../bankfinder.service";
+import { Bank } from "../model/bank";
 
 
 @Component({
@@ -10,7 +11,7 @@ import { BankFinderService } from "../bankfinder.service";
 })
 export class BankListComponent {
 
-  searchResult: any[]
+  searchResult: Bank[]
 
 
   constructor(
