@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { BankFinderService } from "../bankfinder.service";
+import { BankFinderService } from "../services/bankfinder.service";
 import { Bank } from "../model/bank";
 
 
