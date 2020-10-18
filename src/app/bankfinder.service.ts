@@ -1,29 +1,29 @@
-import {Injectable, OnInit} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
+
+import { Bank } from "./model/bank";
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class BankFinderService implements OnInit {
+export class BankFinderService {
 
-    banks = [];
+    banks: Bank[] = []
+
 
     constructor(
         private http: HttpClient
     ) {
         this.http.get('/assets/BankList.json')
             .subscribe(banks => {
-                this.banks = banks as any[]
+                this.banks = banks as Bank[]
             })
     }
 
-    ngOnInit(): void {
 
-    }
-
-    searchBanks(query: String, result: (banks: any[]) => void) {
+    searchBanks(query: String, result: (banks: Bank[]) => void) {
         if (!!! query || !!! query.trim()) {
             result(this.banks)
 
